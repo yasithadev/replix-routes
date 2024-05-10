@@ -37,11 +37,11 @@ class SysLayout extends React.Component{
           //document.addEventListener("mousedown", this.doDrag, false);
           right.parent = this.leftContainer;
           //this.props.getLeftMenuContent();
-          //console.debug("SysLayout --> componentDidMount -->",this.props.getLeftMenuContent);//Trace
+          console.debug("SysLayout --> componentDidMount -->",this.props.getLeftMenuContent);//Trace
           const ex = new Error();
           console.log('call from [', ex.stack.split('\n')[2].trim().split(' ')[1], ']');
-          //let sideMenuCntnt = this.props.getLeftMenuContent();
-          //this.setState({sideMenuContent:sideMenuCntnt});
+          let sideMenuCntnt = this.props.getLeftMenuContent();
+          this.setState({sideMenuContent:sideMenuCntnt});
           let sheet =this.props.children;
           this.setState({sheet:sheet });
 
@@ -96,7 +96,7 @@ class SysLayout extends React.Component{
         return [<div className={SysLayoutStyle.layoutBackground + " " + color.layoutBackground}></div>,
           <div ref={this.leftContainer}  className={SysLayoutStyle.left } style={{width: this.state.leftwidth}}>
           <div className={SysLayoutStyle.leftContent + " " + color.leftContent}>
-          <SideNav></SideNav>
+          {childrenWithProps}
           </div>
           </div>,
         <div ref={this.rightContainer}  className={SysLayoutStyle.right + " " + color.right} style={{left: this.state.leftOfRight}}> 
