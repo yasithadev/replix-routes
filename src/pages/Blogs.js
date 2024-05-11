@@ -1,5 +1,8 @@
+import Sheet from '../components/sheet/sheet';
 const Blogs = () => {
-    return <h1>Blog Articlessssssssssssssssssssssssss</h1>;
+    return <Sheet>
+    <h1>Purpose</h1>
+    </Sheet>;
   };
   
   export default Blogs;
